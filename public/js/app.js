@@ -26,8 +26,8 @@ const weatherMessage = document.querySelector(".weather-message");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("check1");
+  // console.log("check1");
   const data = fetchWeatherData(inputLocation.value);
-  console.log(data);
+  // console.log(data);
   //   weatherMessage.innerText = `Currently the temperature is ${data.temperature}`;
 });
