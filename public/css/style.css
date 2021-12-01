@@ -14,7 +14,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh
+    height: 100vh;
+    overflow: hidden;
 }
 
 .main-content {
@@ -58,9 +59,14 @@ header div a {
 {
     width: 100%;
     display:flex;
+
 }
-form
+.search_form form
 {
+    width: 60%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: auto;
 
 }
@@ -70,11 +76,13 @@ form
 	color: #ffffff;
 	border: 0;
 	padding: 12px 50px;
+    
 	font-weight: bold;
 	/* float: right; */
 }
 .input_location
 {    
+    width:90%;
 	background-color: #ffffff;
     color: #111111;
 	padding: 10px 50px;
@@ -108,3 +116,23 @@ footer {
     margin-top: 16px;
     padding: 16px 0;
 } 
+@media only screen and (max-width: 612px) {
+   
+    .search_form form
+    {
+        margin:1rem;
+        width: 80%;
+       flex-direction: column;
+        
+    }
+    .input_location
+    {   width: 90%;
+        display: block;
+
+    }
+    .btn-primary
+    {display: block;
+        margin-top:0.4rem;
+        margin-left:20%;
+    }
+  }
