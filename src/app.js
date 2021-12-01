@@ -1,6 +1,6 @@
 const path = require("path");
 const forecast = require("./utils/forecast");
-const geocode = require("./utils/geoCode");
+const geocode = require("./utils/geocode");
 const express = require("express");
 const request = require("postman-request");
 const hbs = require("hbs");
