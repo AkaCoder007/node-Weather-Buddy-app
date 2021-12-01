@@ -1,21 +1,19 @@
 const fetchWeatherData = (location) => {
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          weatherMessage.innerText = data.error;
-          return;
-        }
-        let logo = document.createElement("div");
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        weatherMessage.innerText = data.error;
+        return;
+      }
+      let logo = document.createElement("div");
 
-        logo.innerHTML = `<div class="weather_logo"><img src="${data.weatherIcon}" alt="weatherLogo"><div>`;
-        locationInfo.insertAdjacentElement("beforebegin", logo);
+      logo.innerHTML = `<div class="weather_logo"><img src="${data.weatherIcon}" alt="weatherLogo"><div>`;
+      locationInfo.insertAdjacentElement("beforebegin", logo);
 
-        locationInfo.innerText = data.location;
-        weatherMessage.innerHTML = `${data.weatherDescription}`;
-      });
-    }
-  );
+      locationInfo.innerText = data.location;
+      weatherMessage.innerHTML = `${data.weatherDescription}`;
+    });
+  });
 };
 
 const searchForm = document.querySelector(".search_form form");
